@@ -7,6 +7,66 @@
 int main() {
     // Nível Novato - Posicionamento dos Navios
     // Sugestão: Declare uma matriz bidimensional para representar o tabuleiro (Ex: int tabuleiro[5][5];).
+    char colunas_tabuleiro [10] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};
+    int linhas_tabuleiro [] =  {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    int tabuleiro [10] [10] = {
+        { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+    };
+    int primeiro_navio [] = {3,3,3};
+    int segundo_navio [] = {3,3,3};
+
+    printf ("      BATALHA NAVAL\n");
+
+    printf ("  ");
+    for (int c = 0; c < 10; c++){
+        printf (" %c", colunas_tabuleiro[c]);
+    }
+
+    for (int i = 2; i < 5; i++){
+        for (int j = 0; j < 3; j++){
+            tabuleiro[2][i] = primeiro_navio[j];
+            break;
+        }
+    }
+
+    for (int i = 7; i < 10; i++){
+        for (int j = 0; j < 3; j++){
+            tabuleiro[i][2] = segundo_navio[j];
+            break;
+        }
+    }
+
+    for (int i = 0; i < 10; i++){
+        for (int j = 0; j < 10; j++){
+            if (j == 0){
+                printf("\n");
+                if (i < 9){
+                    printf ("%i ", linhas_tabuleiro[i]);
+                } else {
+                    printf ("%i", linhas_tabuleiro[i]);
+                }
+            }
+            printf (" %i", tabuleiro[i][j]);
+        }
+    }
+
+    /*for (int i = 2; i < 5; i++){
+        for (int j = 0; j < 3; j++){
+            tabuleiro[i][2] = primeiro_navio[j];
+            break;
+        }
+    }*/
+
+
     // Sugestão: Posicione dois navios no tabuleiro, um verticalmente e outro horizontalmente.
     // Sugestão: Utilize `printf` para exibir as coordenadas de cada parte dos navios.
 
