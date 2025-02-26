@@ -23,6 +23,8 @@ int main() {
     };
     int primeiro_navio [] = {3,3,3};
     int segundo_navio [] = {3,3,3};
+    int terceiro_navio [] = {3,3,3};
+    int quarto_navio [] = {3,3,3};
 
     printf ("      BATALHA NAVAL\n");
 
@@ -31,18 +33,20 @@ int main() {
         printf (" %c", colunas_tabuleiro[c]);
     }
 
-    for (int i = 2; i < 5; i++){
-        for (int j = 0; j < 3; j++){
-            tabuleiro[2][i] = primeiro_navio[j];
-            break;
-        }
+    for (int i = 2, j = 0; i < 5; i++, j++){
+        tabuleiro[5][i] = primeiro_navio[j];
     }
 
-    for (int i = 7; i < 10; i++){
-        for (int j = 0; j < 3; j++){
-            tabuleiro[i][2] = segundo_navio[j];
-            break;
-        }
+    for (int i = 7, j = 0; i < 10; i++, j++){
+        tabuleiro[i][2] = segundo_navio[j];
+    }
+
+    for (int i = 2, j = 0, k = 0; i < 5 && j < 3; i++, j++, k++){
+        tabuleiro[i][j] = terceiro_navio[k];
+    }
+
+    for (int i = 0, j = 9, k = 0; i < 3 && j > 6; i++, j--, k++){
+        tabuleiro[i][j] = quarto_navio[k];
     }
 
     for (int i = 0; i < 10; i++){
@@ -58,13 +62,6 @@ int main() {
             printf (" %i", tabuleiro[i][j]);
         }
     }
-
-    /*for (int i = 2; i < 5; i++){
-        for (int j = 0; j < 3; j++){
-            tabuleiro[i][2] = primeiro_navio[j];
-            break;
-        }
-    }*/
 
 
     // Sugestão: Posicione dois navios no tabuleiro, um verticalmente e outro horizontalmente.
